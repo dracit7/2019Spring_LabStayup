@@ -40,30 +40,12 @@ int fprintfmt(FILE* stream, const char* fmt, ...) {
           putch('0',stream);
           putch('x',stream);
           /* Your code here. */
-          
-          // Remove when finished.
-          fmt_d = va_arg(ap, unsigned long);
-          print_int(fmt_d, stream, 16);
-          break;
 
         case 'f':
           /* Your code here. */
 
-          // Remove when finished.
-          fmt_f = va_arg(ap, double);
-          print_float(fmt_f, stream);
-          break;
-
         case 's':
           /* Your code here. */
-
-          // Remove when finished.
-          fmt_s = va_arg(ap, char*);
-          while (*fmt_s) {
-            putch(*fmt_s,stream);
-            fmt_s++;
-          }
-          break;
         
         default:
           panic("Invalid character after %.");

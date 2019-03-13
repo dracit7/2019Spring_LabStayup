@@ -19,7 +19,7 @@
 #define _COMMAND_H
 
 /* You should make COMMAND_NUM in step with the size of cmd_list. */
-#define COMMAND_NUM 3
+#define COMMAND_NUM 1
 /* The size of argv */
 #define MAX_ARGS 16
 /* Spaces in C */
@@ -33,8 +33,5 @@ struct Command {
 
 int console_help(int argc, char** argv);
 int console_backtrace(int argc, char** argv);
-
-// Remove after finished.
-int console_shutdown(int argc, char** argv);
 
 int exec_cmd(char* command);

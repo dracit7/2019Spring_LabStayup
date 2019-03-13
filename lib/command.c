@@ -4,22 +4,12 @@
 struct Command cmd_list[] = {
   {"help", "Display this list of commands", console_help}
   /* Your code here */
-
-  // Remove after finished
-  , {"shutdown", "Shut down the system", console_shutdown}
-  , {"backtrace", "Display the structure of the stack", console_backtrace}
-
 };
 
 int console_help(int argc, char** argv) {
   for (int i = 0; i < COMMAND_NUM; i++) {
     fprintfmt(stdout, "%s - %s\n", cmd_list[i].name, cmd_list[i].description);
   }
-}
-
-// Remove after finished.
-int console_shutdown(int argc, char** argv) {
-  shutdown();
 }
 
 int console_backtrace(int argc, char** argv) {
@@ -29,33 +19,23 @@ int console_backtrace(int argc, char** argv) {
   // Make sure that you understand the use of %ebp and %eip registers.
   u_int64_t ebp, eip;
   int iter = 1;
-  // Use a magic function to get the value of ebp.
+  // Use a magic function to get the value of %ebp.
   ebp = get_ebp();
 
   // Now, how can we get the value of %eip by %ebp?
-  eip = /* Replace 0 with your solution. */ *(u_int64_t *)(ebp + 8);
+  eip = /* Replace 0 with your solution. */ 0;
 
   // Print the information in restricted format.
   /* Your code here. */
 
-  // Remove after finished.
-  fprintfmt(stdout, "\t\tframe pointer:  %x\n",ebp);
-  fprintfmt(stdout, "\t\treturn address: %x\n",eip);
-
   // Start backtracing, Using a infinite loop:
   while (1) {
 
-    ebp = /* How to backtrace? Replace 0 with your solution. */ *(u_int64_t *)ebp;
+    ebp = /* How to backtrace? Replace 0 with your solution. */ 0;
     if (!ebp) break;
+    
     // Calculate eip and print information.
     /* Your code here. */
-
-    // Remove after finished.
-    eip = *(u_int64_t *)(ebp + 8);
-    fprintfmt(stdout, "\tBacktrace %d:\n", iter);
-    fprintfmt(stdout, "\t\tframe pointer:  %x\n",ebp);
-    fprintfmt(stdout, "\t\treturn address: %x\n",eip);
-    iter++;
 
   }
 
