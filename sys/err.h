@@ -18,3 +18,6 @@
 
 /* Print the error message to stdout and exit. */
 void panic(const char* msg);
+
+/* Shutdown */
+void shutdown();
